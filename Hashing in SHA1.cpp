@@ -4,14 +4,13 @@
 #include <vector>
 #include <sstream>
 #include <bitset>
-#include <cstdint>  // Include this header for uint32_t, uint64_t, and uint8_t
+#include <cstdint>
 
 using namespace std;
 
 uint32_t leftRotate(uint32_t value, uint32_t bits) {
     return (value << bits) | (value >> (32 - bits));
 }
-
 string sha1(const string &input) {
     uint32_t h0 = 0x67452301;
     uint32_t h1 = 0xEFCDAB89;
@@ -81,7 +80,6 @@ string sha1(const string &input) {
        << setw(8) << setfill('0') << h4;
     return ss.str();
 }
-
 int main() {
     string input;
     cout << "Enter the string to hash: ";
@@ -89,6 +87,5 @@ int main() {
 
     string hash = sha1(input);
     cout << "SHA-1 Hash: " << hash << endl;
-
     return 0;
 }
